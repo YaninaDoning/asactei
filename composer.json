@@ -1,7 +1,13 @@
 {
-    "name": "yani/asactei",
+    "name": "asactei",
     "license": "proprietary",
     "type": "project",
+    "authors": [
+        {
+        "name": "Yanina Andrea Doning",
+        "email": "yani.doning@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "": "src/"
