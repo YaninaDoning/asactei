@@ -1,0 +1,28 @@
+FormulariosBundle\Entity\Tramite:
+  type: entity
+  inheritanceType: JOINED
+  table: tramite
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    creado:
+      type: datetime
+      nullable: false
+    actualizado:
+      type: datetime
+      nullable: false
+    enviado:
+      type: datetime
+      nullable: true
+    presentado:
+      type: datetime
+      nullable: true
+    estado:
+      type: smallint
+      nullable: false
+    codigo:
+      type: string
+      nullable: true

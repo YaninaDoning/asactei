@@ -1,0 +1,16 @@
+FormulariosBundle\Entity\InstitutoCyT:
+  type: entity
+  table: instituto_cyt
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 130
+      nullable: false
+    habilitado:
+      type: boolean
+      nullable: false

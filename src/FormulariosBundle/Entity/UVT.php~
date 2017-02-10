@@ -1,0 +1,16 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class UVT
+{
+    private $id;
+    private $nombre;
+    private $domicilio;
+    private $localidad;
+    private $telefono;
+    private $fax;
+    private $cp;
+    private $email;
+    private $habilitado;
+}

@@ -1,0 +1,20 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Usuario {
+
+    private $id;
+    private $creado;
+    private $apellido;
+    private $nombre;
+    private $organizacion;
+    private $email;
+    private $password;
+    private $hash;
+    private $habilitado;
+    private $salt;
+    private $telefono;
+    private $ultimo_login;
+    private $tramites;
+}

@@ -1,0 +1,8 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Roles{
+     private $id;
+     private $rol;
+}

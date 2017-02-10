@@ -1,0 +1,10 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class InstitutoCyT
+{
+    private $id;
+    private $nombre;
+    private $habilitado;
+}

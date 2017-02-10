@@ -1,0 +1,14 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Tramite
+{
+    private $id;
+    private $creado;
+    private $actualizado;
+    private $enviado;
+    private $presentado;
+    private $estado;
+    private $codigo;
+}

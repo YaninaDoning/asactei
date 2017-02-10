@@ -1,0 +1,58 @@
+FormulariosBundle\Entity\Persona:
+  type: entity
+  inheritanceType: JOINED
+  table: persona
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 100
+      nullable: false
+    cargo:
+      type: string
+      length: 50
+      nullable: false
+    email:
+      type: string
+      length: 100
+      nullable: true
+    telefono:
+      type: string
+      length: 30
+      nullable: true
+    movil:
+      type: string
+      length: 30
+      nullable: true
+    cuit:
+      type: string
+      length: 12
+      nullable: true
+    direccion:
+      type: string
+      length: 100
+      nullable: true
+    cp:
+      type: string
+      length: 10
+      nullable: true
+    institucion:
+      type: string
+      length: 50
+      nullable: true
+    titulo:
+      type: string
+      length: 50
+      nullable: true
+    funcion:
+      type: string
+      length: 100
+      nullable: true
+    horas_dedicadas:
+      type: string
+      length: 50
+      nullable: true

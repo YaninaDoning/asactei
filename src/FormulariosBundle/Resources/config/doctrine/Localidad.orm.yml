@@ -1,0 +1,28 @@
+FormulariosBundle\Entity\Localidad:
+  type: entity
+  table: localidad
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 40
+      nullable: false
+    departamento:
+      type: string
+      length: 40
+      nullable: false
+    departamento_vid:
+      type: integer
+      nullable: false
+    localidad_vid:
+      type: integer
+      unique: true
+      nullable: false
+    region:
+      type: integer
+      length: 1
+      nullable: true

@@ -1,0 +1,53 @@
+FormulariosBundle\Entity\Tramite_ANR_Eventos:
+  type: entity
+  table: tramite_ANR_eventos
+  extends: FormulariosBundle\Entity\Tramite
+  fields:
+    nombre_evento:
+      type: string
+      length: 255
+      nullable: false
+    otros_subsidios:
+      type: boolean
+      nullable: true
+    otro_subsidio_asactei:
+      type: boolean
+      nullable: true
+    descripcion:
+      type: text
+      length: 2500
+      nullable: true
+    costo_inscripcion:
+      type: float
+      length: 12
+      nullable: true
+    presupuesto_total:
+      type: float
+      length: 12
+      nullable: true
+    presupuesto_obs_traslado:
+      type: text
+      length: 4000
+      nullable: true
+    presupuesto_obs_material:
+      type: text
+      length: 4000
+      nullable: true
+    presupuesto_obs_servicios:
+      type: text
+      length: 4000
+      nullable: true
+    presupuesto_obs_honorarios:
+      type: text
+      length: 4000
+      nullable: true
+    presupuesto_obs_uvt:
+      type: text
+      length: 4000
+      nullable: true
+    fecha_desde:
+      type: datetime
+      nullable: false
+    fecha_hasta:
+      type: datetime
+      nullable: false

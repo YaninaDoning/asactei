@@ -1,0 +1,162 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Tramite
+{
+    private $id;
+    private $creado;
+    private $actualizado;
+    private $enviado;
+    private $presentado;
+    private $estado;
+    private $codigo;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set creado
+     *
+     * @param \DateTime $creado
+     * @return Tramite
+     */
+    public function setCreado($creado)
+    {
+        $this->creado = $creado;
+
+        return $this;
+    }
+
+    /**
+     * Get creado
+     *
+     * @return \DateTime 
+     */
+    public function getCreado()
+    {
+        return $this->creado;
+    }
+
+    /**
+     * Set actualizado
+     *
+     * @param \DateTime $actualizado
+     * @return Tramite
+     */
+    public function setActualizado($actualizado)
+    {
+        $this->actualizado = $actualizado;
+
+        return $this;
+    }
+
+    /**
+     * Get actualizado
+     *
+     * @return \DateTime 
+     */
+    public function getActualizado()
+    {
+        return $this->actualizado;
+    }
+
+    /**
+     * Set enviado
+     *
+     * @param \DateTime $enviado
+     * @return Tramite
+     */
+    public function setEnviado($enviado)
+    {
+        $this->enviado = $enviado;
+
+        return $this;
+    }
+
+    /**
+     * Get enviado
+     *
+     * @return \DateTime 
+     */
+    public function getEnviado()
+    {
+        return $this->enviado;
+    }
+
+    /**
+     * Set presentado
+     *
+     * @param \DateTime $presentado
+     * @return Tramite
+     */
+    public function setPresentado($presentado)
+    {
+        $this->presentado = $presentado;
+
+        return $this;
+    }
+
+    /**
+     * Get presentado
+     *
+     * @return \DateTime 
+     */
+    public function getPresentado()
+    {
+        return $this->presentado;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param integer $estado
+     * @return Tramite
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return integer 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     * @return Tramite
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+}

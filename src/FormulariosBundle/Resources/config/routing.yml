@@ -1,0 +1,3 @@
+formularios_homepage:
+    path:     /
+    defaults: { _controller: FormulariosBundle:Default:index }

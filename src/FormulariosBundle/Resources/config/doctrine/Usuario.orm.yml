@@ -1,0 +1,51 @@
+FormulariosBundle\Entity\Usuario:
+  type: entity
+  table: usuario
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    creado:
+      type: datetime
+      nullable: false
+    apellido:
+      type: string
+      length: 80
+      nullable: false
+    nombre:
+      type: string
+      length: 80
+      nullable: false
+    organizacion:
+      type: string
+      length: 80
+      nullable: false
+    email:
+      type: string
+      unique: true
+      length: 80
+      nullable: false
+    password:
+      type: string
+      length: 200
+      nullable: false
+    hash:
+      type: string
+      length: 200
+      nullable: false
+    habilitado:
+      type: boolean
+      nullable: false
+    salt:
+      type: string
+      length: 80
+      nullable: false
+    telefono:
+      type: string
+      length: 25
+      nullable: true
+    ultimo_login:
+      type: datetime
+      nullable: true

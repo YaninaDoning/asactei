@@ -1,0 +1,21 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Persona
+{
+    private $id;
+    private $nombre;
+    private $cargo;
+    private $email;
+    private $telefono;
+    private $movil;
+    private $cuit;
+    private $direccion;
+    private $cp;
+    private $institucion;
+    private $titulo;
+    private $funcion;
+    private $horas_dedicadas;
+    private $tipo_persona;
+}
