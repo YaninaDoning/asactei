@@ -17,6 +17,7 @@ class Usuario {
     private $telefono;
     private $ultimo_login;
     private $tramites;
+    private $roles;
 
     /**
      * Get id
@@ -279,5 +280,70 @@ class Usuario {
     public function getUltimoLogin()
     {
         return $this->ultimo_login;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tramites = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add tramite
+     *
+     * @param \FormulariosBundle\Entity\Tramite $tramite
+     *
+     * @return Usuario
+     */
+    public function addTramite(\FormulariosBundle\Entity\Tramite $tramite)
+    {
+        $this->tramites[] = $tramite;
+
+        return $this;
+    }
+
+    /**
+     * Remove tramite
+     *
+     * @param \FormulariosBundle\Entity\Tramite $tramite
+     */
+    public function removeTramite(\FormulariosBundle\Entity\Tramite $tramite)
+    {
+        $this->tramites->removeElement($tramite);
+    }
+
+    /**
+     * Get tramites
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTramites()
+    {
+        return $this->tramites;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param \FormulariosBundle\Entity\Roles $roles
+     *
+     * @return Usuario
+     */
+    public function setRoles(\FormulariosBundle\Entity\Roles $roles = null)
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \FormulariosBundle\Entity\Roles
+     */
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }

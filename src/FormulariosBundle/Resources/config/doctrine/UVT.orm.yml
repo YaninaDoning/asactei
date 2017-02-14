@@ -38,3 +38,7 @@ FormulariosBundle\Entity\UVT:
     habilitado:
       type: boolean
       nullable: true
+  oneToMany:
+    representantes:
+      targetEntity: FormulariosBundle\Entity\Representante_UVT
+      mappedBy: uvt

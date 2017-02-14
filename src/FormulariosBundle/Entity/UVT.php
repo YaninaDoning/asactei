@@ -13,6 +13,7 @@ class UVT
     private $cp;
     private $email;
     private $habilitado;
+    private $representantes;
 
     /**
      * Get id
@@ -206,5 +207,46 @@ class UVT
     public function getHabilitado()
     {
         return $this->habilitado;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->representantes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add representante
+     *
+     * @param \FormulariosBundle\Entity\Representante_UVT $representante
+     *
+     * @return UVT
+     */
+    public function addRepresentante(\FormulariosBundle\Entity\Representante_UVT $representante)
+    {
+        $this->representantes[] = $representante;
+
+        return $this;
+    }
+
+    /**
+     * Remove representante
+     *
+     * @param \FormulariosBundle\Entity\Representante_UVT $representante
+     */
+    public function removeRepresentante(\FormulariosBundle\Entity\Representante_UVT $representante)
+    {
+        $this->representantes->removeElement($representante);
+    }
+
+    /**
+     * Get representantes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRepresentantes()
+    {
+        return $this->representantes;
     }
 }

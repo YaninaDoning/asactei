@@ -51,3 +51,30 @@ FormulariosBundle\Entity\Tramite_ANR_Eventos:
     fecha_hasta:
       type: datetime
       nullable: false
+  manyToOne:
+    beneficiario:
+      targetEntity: FormulariosBundle\Entity\Institucion
+      cascade: ["all"]
+      joinColumns:
+        institucion_beneficiaria_id:
+          referencedColumnName: id
+          onDelete: CASCADE
+          onUpdate: CASCADE
+    uvt_representante:
+      targetEntity: FormulariosBundle\Entity\Representante_UVT
+      cascade: ["all"]
+      joinColumns:
+        representante_uvt_id:
+          referencedColumnName: id
+    director:
+      targetEntity: FormulariosBundle\Entity\Persona
+      cascade: ["all"]
+      joinColumns:
+        director_id:
+          referencedColumnName: id
+    responsable:
+      targetEntity: FormulariosBundle\Entity\Persona
+      cascade: ["all"]
+      joinColumns:
+        responsable_id:
+          referencedColumnName: id

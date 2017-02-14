@@ -26,3 +26,10 @@ FormulariosBundle\Entity\Localidad:
       type: integer
       length: 1
       nullable: true
+  oneToMany:
+    institucion:
+      targetEntity: FormulariosBundle\Entity\Institucion
+      mappedBy: localidad
+    personas:
+      targetEntity: FormulariosBundle\Entity\Persona
+      mappedBy: localidad

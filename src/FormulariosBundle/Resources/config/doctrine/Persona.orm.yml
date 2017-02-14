@@ -56,3 +56,25 @@ FormulariosBundle\Entity\Persona:
       type: string
       length: 50
       nullable: true
+  manyToOne:
+    localidad:
+      targetEntity: FormulariosBundle\Entity\Localidad
+      inversedBy: personas
+      joinColumns:
+        localidad_id:
+          referencedColumnName: id
+    tramite_integrante:
+      targetEntity: FormulariosBundle\Entity\Tramite
+      inversedBy: integrantes
+      cascade: ["all"]
+      joinColumns:
+        integrante_tramite_id:
+          referencedColumnName: id
+          onDelete: CASCADE
+  discriminatorColumn:
+    name: tipo_persona
+    length: 10
+    type: string
+  discriminatorMap:
+    PERSONA: FormulariosBundle\Entity\Persona
+    REPR_UVT: FormulariosBundle\Entity\Representante_UVT

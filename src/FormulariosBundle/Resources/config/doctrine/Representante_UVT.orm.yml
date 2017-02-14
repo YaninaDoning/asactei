@@ -1,0 +1,13 @@
+FormulariosBundle\Entity\Representante_UVT:
+  type: entity
+  table: representante_uvt
+  extends: FormulariosBundle\Entity\Persona
+  fields: 
+  manyToOne:
+    uvt:
+      targetEntity: FormulariosBundle\Entity\UVT
+      inversedBy: representantes
+      joinColumns:
+        uvt_id:
+          referencedColumnName: id
+

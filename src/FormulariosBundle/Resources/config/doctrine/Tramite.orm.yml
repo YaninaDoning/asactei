@@ -26,3 +26,33 @@ FormulariosBundle\Entity\Tramite:
     codigo:
       type: string
       nullable: true
+  indexes:
+    idx_codigo:
+      columns: [codigo]
+  oneToMany:
+    instituciones:
+      targetEntity: FormulariosBundle\Entity\Institucion
+      mappedBy: tramite
+    instituciones_prestatarias:
+      targetEntity: FormulariosBundle\Entity\Institucion
+      mappedBy: tramite_presta_servicio
+      cascade: ["all"]
+    integrantes:
+      targetEntity: FormulariosBundle\Entity\Persona
+      mappedBy: tramite_integrante
+      cascade: ["all"]
+  manyToOne:
+    usuario:
+      targetEntity: FormulariosBundle\Entity\Usuario
+      inversedBy: tramites
+      joinColumns:
+        usuario_id:
+          referencedColumnName: id
+          onDelete: CASCADE
+          onUpdate: CASCADE
+  discriminatorColumn:
+    name: tipo_tramite
+    type: string
+  discriminatorMap:
+    TR: FormulariosBundle\Entity\Tramite
+    EV: FormulariosBundle\Entity\Tramite_ANR_Eventos

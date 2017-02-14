@@ -5,6 +5,10 @@ namespace FormulariosBundle\Entity;
 class Tramite_ANR_Eventos extends Tramite {
 
     private $nombre_evento;
+    private $beneficiario;
+    private $uvt_representante;
+    private $director;
+    private $responsable;
     private $descripcion;
     private $fecha_desde;
     private $fecha_hasta;

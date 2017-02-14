@@ -1,0 +1,8 @@
+<?php
+
+namespace FormulariosBundle\Entity;
+
+class Representante_UVT extends Persona
+{
+    private $uvt;
+}

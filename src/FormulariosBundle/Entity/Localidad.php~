@@ -12,6 +12,9 @@ class Localidad
     private $departamento_vid;
     private $localidad_vid;
     private $region;
+    private $institucion;
+    private $personas;
+
 
     /**
      * Get id

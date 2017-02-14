@@ -17,7 +17,8 @@ class Persona
     private $titulo;
     private $funcion;
     private $horas_dedicadas;
-    private $tipo_persona;
+    private $tramite_integrante;
+    private $localidad;
 
     /**
      * Get id
@@ -303,5 +304,53 @@ class Persona
     public function getHorasDedicadas()
     {
         return $this->horas_dedicadas;
+    }
+
+    /**
+     * Set localidad
+     *
+     * @param \FormulariosBundle\Entity\Localidad $localidad
+     *
+     * @return Persona
+     */
+    public function setLocalidad(\FormulariosBundle\Entity\Localidad $localidad = null)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return \FormulariosBundle\Entity\Localidad
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    /**
+     * Set tramiteIntegrante
+     *
+     * @param \FormulariosBundle\Entity\Tramite $tramiteIntegrante
+     *
+     * @return Persona
+     */
+    public function setTramiteIntegrante(\FormulariosBundle\Entity\Tramite $tramiteIntegrante = null)
+    {
+        $this->tramite_integrante = $tramiteIntegrante;
+
+        return $this;
+    }
+
+    /**
+     * Get tramiteIntegrante
+     *
+     * @return \FormulariosBundle\Entity\Tramite
+     */
+    public function getTramiteIntegrante()
+    {
+        return $this->tramite_integrante;
     }
 }

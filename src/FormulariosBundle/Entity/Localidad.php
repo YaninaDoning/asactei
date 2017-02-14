@@ -12,6 +12,9 @@ class Localidad
     private $departamento_vid;
     private $localidad_vid;
     private $region;
+    private $institucion;
+    private $personas;
+
 
     /**
      * Get id
@@ -136,5 +139,81 @@ class Localidad
     public function getRegion()
     {
         return $this->region;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->institucion = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add institucion
+     *
+     * @param \FormulariosBundle\Entity\Institucion $institucion
+     *
+     * @return Localidad
+     */
+    public function addInstitucion(\FormulariosBundle\Entity\Institucion $institucion)
+    {
+        $this->institucion[] = $institucion;
+
+        return $this;
+    }
+
+    /**
+     * Remove institucion
+     *
+     * @param \FormulariosBundle\Entity\Institucion $institucion
+     */
+    public function removeInstitucion(\FormulariosBundle\Entity\Institucion $institucion)
+    {
+        $this->institucion->removeElement($institucion);
+    }
+
+    /**
+     * Get institucion
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInstitucion()
+    {
+        return $this->institucion;
+    }
+
+    /**
+     * Add persona
+     *
+     * @param \FormulariosBundle\Entity\Persona $persona
+     *
+     * @return Localidad
+     */
+    public function addPersona(\FormulariosBundle\Entity\Persona $persona)
+    {
+        $this->personas[] = $persona;
+
+        return $this;
+    }
+
+    /**
+     * Remove persona
+     *
+     * @param \FormulariosBundle\Entity\Persona $persona
+     */
+    public function removePersona(\FormulariosBundle\Entity\Persona $persona)
+    {
+        $this->personas->removeElement($persona);
+    }
+
+    /**
+     * Get personas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPersonas()
+    {
+        return $this->personas;
     }
 }
