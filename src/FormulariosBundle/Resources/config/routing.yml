@@ -1,3 +1,11 @@
-formularios_homepage:
+login:
     path:     /
-    defaults: { _controller: FormulariosBundle:Default:index }
+    defaults: { _controller: FormulariosBundle:Login:login }
+
+agregarusuario:
+    path:     /nuevoUsuario/
+    defaults: { _controller: FormulariosBundle:Login:nuevoUsuario }
+
+portada:
+    path:     /tramite/
+    defaults: { _controller: FormulariosBundle:Portada:portada }

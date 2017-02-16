@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block cuerpo %}
+
+<style type="text/css">
+     form button {		
+          font-size: 12px;
+          margin: 4px 0;
+justify-content: center;
+          background: none repeat scroll 0 0 #cccccc !important;
+          border: medium none;
+          color: #555555;
+          font-weight: normal;
+      }
+</style>
+
+<div class="row form">
+     <h3>Nuevo trámite </h3>
+        <form>
+            <div class="row">
+                <div class="twelvecol table-responsive">
+                    <table
+                        class="table table-condensed table-hover table-striped table-bordered"
+                        border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th class="columns-dest">Tipo de Trámite</th>
+                                <th class="columns-dest" style="width:155px">Operaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ANR Eventos</td>
+                                <td>
+                                    <button title="Nueva Presentación" class="opciones" onclick="">Iniciar Nuevo Trámite</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row form">
+        <h3>Presentaciones</h3>
+        <form>
+            <div class="row">
+                <div class="twelvecol table-responsive">
+                    <table
+                        class="table table-condensed table-hover table-striped table-bordered tablesorter"
+                        border="0" cellspacing="0" cellpadding="0" id="tablaBorradores">
+                        <thead>
+                            <tr>
+                                <th class="columns-dest" style="width: 120px">Número tramite</th>
+                                <th class="columns-dest" style="width: 200px">Tipo de Trámite</th>
+                                <th class="columns-dest">Título</th>
+                                <th class="columns-dest" style="width:200px">Estado</th>
+                                <th class="columns-dest" style="width:155px">Operaciones</th>
+                            </tr>
+                        </thead>
+
+                     </table>
+                                    
+                  </div>
+               </div>
+         </form>
+      </div>
+                   
+ {% endblock %}

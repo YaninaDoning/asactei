@@ -1,0 +1,53 @@
+
+{% extends 'base.html.twig' %}
+
+{% block cuerpo %}
+
+
+<div class="row form">
+    <form>
+        <h3>Alta Usuario</h3>
+        <div class="row">
+
+            <div class="twocol">
+                <label>Apellido</label> 
+                <input id="reg_apellido" name="reg_apellido" class="input required" type="text"> 
+                <label>Mail</label>
+                <input id="reg_email" name="reg_email" class="input required" type="text"> 
+            </div>
+
+            <div class="twocol">
+		<label>Nombre</label> 
+                <input id="reg_nombre" name="reg_nombre" class="input required" type="text">
+                <label>Contraseña</label>
+                <input id="reg_password" name="reg_password" class="input required" type="password">    
+            </div>
+            
+            <div class="twocol">
+                <label>Organización</label>
+                <input id="reg_organizacion" name="reg_organizacion" class="input required" type="text">
+		<label>Repita Contraseña</label>
+                <input id="reg_password_verify" name="reg_password_verify" class="input required" type="password">
+            </div>
+
+            <div class="twocol">
+                <label>Teléfono</label> 
+                <input id="reg_telefono" name="reg_telefono" class="input required" type="text"> 
+            </div>
+
+ 	    <div class="twocol">
+		<label>Rol</label> 
+                <select name="rol" id="rol">
+                    <option value="1">Evaluador</option>
+                    <option value="2">Postulante</option> 
+                </select>
+            </div>
+
+            <div class="row"><br>
+                    <button onclick="">Cancelar</button>                    
+                    <button onclick="">Finalizar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
