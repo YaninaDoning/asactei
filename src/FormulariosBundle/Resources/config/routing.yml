@@ -2,10 +2,21 @@ login:
     path:     /
     defaults: { _controller: FormulariosBundle:Login:login }
 
-agregarusuario:
+nuevoUsuario:
     path:     /nuevoUsuario/
     defaults: { _controller: FormulariosBundle:Login:nuevoUsuario }
+
+validarUsuario:
+    path:     /validaUsuario/
+    defaults: { _controller: FormulariosBundle:Login:validate }
 
 portada:
     path:     /tramite/
     defaults: { _controller: FormulariosBundle:Portada:portada }
+
+ANR_Eventos:
+    path:     /ANR_Eventos/
+    defaults: { _controller: FormulariosBundle:Formularios:ANR_Eventos }
+
+
+

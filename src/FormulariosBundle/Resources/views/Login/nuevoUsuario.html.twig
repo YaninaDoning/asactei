@@ -6,12 +6,13 @@
 
 <div class="row form">
     <form>
-        <h3>Alta Usuario</h3>
+
+    <h3>Alta Usuariooooooooooooooo</h3>
         <div class="row">
 
             <div class="twocol">
                 <label>Apellido</label> 
-                <input id="reg_apellido" name="reg_apellido" class="input required" type="text"> 
+                <input id="apellido" name="apellido" class="input required" type="text"> 
                 <label>Mail</label>
                 <input id="reg_email" name="reg_email" class="input required" type="text"> 
             </div>
@@ -44,10 +45,14 @@
             </div>
 
             <div class="row"><br>
-                    <button onclick="">Cancelar</button>                    
-                    <button onclick="">Finalizar</button>
+		    <a class="button" href="{{ path('login') }}">Cancelar</a>                   
+                    <a href="{{ path('validarUsuario') }}">Finalizar</a> 
             </div>
         </div>
     </form>
 </div>
+
 {% endblock %}
+
+
+

@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+
+{% block cuerpo %}
+
+<script>
+   $(document).ready(function() {
+        $('#iralmenu').click(function(e) {
+             e.preventDefault();
+        $('html, body').animate({
+             crollTop: $("#pasosdiv").offset().top
+         }, 1000);
+         });
+         $('html, body').animate({
+            scrollTop: $("#pasosdiv").offset().top
+         }, 1000);
+   });
+</script>
+
+<div class="row form">
+    <form>
+        <h3>I. DATOS GENERALES</h3>
+        <h4>I.1 Nombre de la Unidad de Vinculación Tecnológica Administradora (UVT).</h4>
+        <div class="row">
+            <div class="threecol">
+                <label>Nombre de la UVT</label>
+                <select id="uvt_id" name="uvt_id" onchange="onChangeUvt();">
+                    <option value=""
+                            data-domicilio=""
+                            data-localidad=""
+                            data-telefono =""
+                            data-fax =""
+                            data-cp =""
+                            data-email =""
+                            >Seleccione</option>
+                    {foreach item=uvt from=$controller->getUvts()}
+                        <option value="{$uvt->getId()}"
+                                {if $controller->getTramite()->getUvtRepresentante() != false}
+                                    {if $controller->getTramite()->getUvtRepresentanteUvtId() == $uvt->getId()}
+                                        selected="selected"
+                                    {/if}
+                                {/if}
+                                data-domicilio="{$uvt->getDomicilio()}"
+                                data-localidad="{$uvt->getLocalidad()}"
+                                data-telefono ="{$uvt->getTelefono()}"
+                                data-fax ="{$uvt->getFax()}"
+                                data-cp ="{$uvt->getCp()}"
+                                data-email ="{$uvt->getEmail()}"
+                                > {$uvt->getNombre()}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <div class="threecol">
+                <label>Dirección</label>
+                <input id="uvt_domicilio" name="uvt_domicilio" class="input" type="text" readonly="readonly">
+            </div>
+            <div class="threecol">
+                <label>Localidad</label>
+                <input id="uvt_localidad" name="uvt_localidad" class="input" type="text" readonly="readonly">
+            </div>
+            <div class="threecol">
+                <label>Código Postal</label>
+                <input id="uvt_cp" name="uvt_cp" class="input numeric" type="text" readonly="readonly">
+            </div>
+            <div class="threecol">
+                <label>E-mail</label>
+                <input id="uvt_email" name="uvt_email" class="input" type="text" readonly="readonly">
+            </div>
+            <div class="threecol">
+                <label>Teléfono fijo/fax</label>
+                <input id="uvt_telefono" name="uvt_telefono" class="input numeric" type="text" readonly="readonly">
+            </div>
+	    <br>        
+	    <div class="twelvecol">
+                <h5>Representante de la UVT ante la ASaCTeI</h5>
+            </div>
+            <div class="threecol">
+                <label>Apellido y Nombres</label>
+                <input id="ruvt_nombre"  name="ruvt_nombre" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>Cargo</label>
+                <input id="ruvt_cargo"  name="ruvt_cargo" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>Dirección</label>
+                <input id="ruvt_direccion"  name="ruvt_direccion" class="input" type="text">
+	    </div>
+            <div class="threecol">
+                <label>Código Postal</label>
+                <input id="ruvt_cp"  name="ruvt_cp" class="input numeric" type="text">
+            </div>
+            <div class="threecol">
+                <label>Teléfono Fijo</label>
+                <input id="ruvt_telefono"  name="ruvt_telefono" class="input numeric" type="text">
+            </div>
+            <div class="threecol">
+                <label>Teléfono Móvil</label>
+                <input id="ruvt_movil"  name="ruvt_movil" class="input numeric" type="text">
+            </div>
+            <div class="threecol">
+                <label>E-mail</label>
+                <input id="ruvt_email"  name="ruvt_email" class="input" type="text">
+            </div>
+        </div>
+    </form>
+</div>
+Nota: Las UVTs que no se encuentren inscriptas en el Registro de Beneficiarios del Estado deberán proceder a dicha inscripción
+dirigiéndose a la Dirección General de Administración del MINCTIP, Dpto. Presupuesto, Contable/Patrimonio y Revisiva, al
+teléfono 0342-4505323, o al correo electrónico:
+<a href="mailto:minctip@santafe.gov.ar" target="_blank">minctip@santafe.gov.ar</a>.
+<br>
+<br>
+
+<div class="row form">
+    <form>
+        <h4>I.2 Empresa Beneficiaria</h4>
+        <div class="row">
+            <div class="threecol">
+                <label> Institución</label>
+                <input id="nombre_institucion" name="nombre_institucion" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label> Dirección </label>
+                <input id="domicilio_institucion" name="domicilio_institucion" class="input numeric" type="text">
+            </div>
+            <div class="threecol">
+                <label>Localidad</label>
+                <select id="localidad_institucion" name="localidad_institucion">
+                    <option value="" selected>Localidad</option>
+                    {html_options selected=$controller->getTramite()->getBeneficiarioLocalidadId()  options=$controller->getLocalidades()}
+                </select>
+            </div>
+            <div class="threecol">
+                <label>Código Postal</label>
+                <input id="cp_institucion" name="cp_institucion" class="input" type="text">
+            </div>
+ 	    <div class="threecol">
+                <label>Región</label>
+                <input id="region_institucion" name="region_institucion" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>E-mail</label>
+                <input id="email_institucion" name="email_institucion" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>Teléfono fijo/fax</label>
+                <input id="telefono_institucion"  name="telefono_institucion" class="input" type="text">
+            </div>
+	    <div class="threecol">
+                <label>Responsable Institución</label>
+                <input id="responsable_institucion"  name="responsable_institucion" class="input" type="text">
+            </div>
+            <br>
+        </div>
+    </form>
+</div>
+
+<div class="row form">
+    <form>
+        <h4>I.3 Responsable organizador del evento.</h4>
+            <div class="threecol">
+                <label>Apellido y Nombres</label>
+                <input id="representante_nombre" name="representante_nombre" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>CUIT/CUIL</label>
+                <input id="representante_cuit" name="representante_cuit" class="input numeric" type="text">
+            </div>
+            <div class="threecol">
+                <label>Domicilio</label>
+                <input id="representante_domicilio" name="representante_domicilio" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>Cargo en la empresa</label>
+                <input id="representante_cargo" name="representante_cargo" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>Teléfono</label>
+                <input id="representante_telefono" name="representante_telefono" class="input" type="text">
+            </div>
+            <div class="threecol">
+                <label>E-mail</label>
+                <input id="representante_email" name="representante_email" class="input" type="text">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="row form">
+    <form>
+        <h3>II. DATOS DEL PROYECTO</h3>
+        <h4>II.1 Nombre del Evento (Reunión científica, congreso, taller, workshop): máximo 250 caracteres con espacios.</h4>
+        <div class="row">
+            <div class="twelvecol" style="margin-bottom: 10px;">
+                <textarea class="input" name="titulo" id="titulo" cols="" rows=""></textarea>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row form">
+    <form>
+        <h4>II.2 Descripción del Evento (Detallar el objeto del evento, disertantes, público objetivo, cantidad estimada de participantes, alcance territorial, Periodicidad, etc): máximo 2000 caracteres con espacios.</h4>
+        <div class="row">
+            <div class="twelvecol" style="margin-bottom: 10px;">
+                <textarea class="input" name="descripcion" id="descripcion" cols="" rows=""></textarea>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row form">
+    <form>
+        <h4>II.3 Fecha de realización (La fecha de solicitud del ANR debe ser al menos 60 días previa a la realización del evento).</h4>
+        <div class="row">
+            <div class="twelvecol" style="margin-bottom: 10px;">
+                <div class="threecol">
+                	<label>Fecha Inicio</label>
+                	<input id="fecha_inicio"  name="fecha_inicio" class="campo_fecha" type="text">
+            	</div>
+		<div class="threecol">
+                	<label>Fecha Fin</label>
+                	<input id="fecha_fin"  name="fecha_fin" class="campo_fecha" type="text">
+            	</div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="row form">
+    <form>
+        <h4>II.4 Costo de inscripción al evento (Tarifa a los asistentes/participantes?).</h4>
+        <div class="row">
+            <input id="tarifa"  name="tarifa" class="input" type="text">
+        </div>
+
+    </form>
+</div>
+
+<div class="row form">
+    <form>
+        <h3>III. PRESUPUESTO SOLICITADO</h3>
+        <h4>III.1 Monto Solicitado al MINCTYP.</h4>
+        <div class="row">
+            <div class="twelvecol" style="margin-bottom: 10px;">
+               <input id="monto_total"  name="monto_total" class="input" type="text">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
