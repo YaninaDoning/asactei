@@ -1,4 +1,5 @@
 services:
-#    formularios.example:
-#        class: FormulariosBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    usuario.datos:
+        class: FormulariosBundle\Model\UsuarioModel
+        arguments: ["@doctrine.orm.entity_manager"]
+

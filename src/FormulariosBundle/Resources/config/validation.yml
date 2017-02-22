@@ -1,24 +1,22 @@
 FormulariosBundle\Entity\Usuario:
     properties:
         apellido:
-            - NotBlank: ~
+            - NotBlank: { message: "El apellido no puede estar vacío" }
             - Type: string
         nombre:
-            - NotBlank: ~
+            - NotBlank: { message: "El nombre no puede estar vacío" }
             - Type: string
         organizacion:
-            - NotBlank: ~
+            - NotBlank: { message: "La organización no puede estar vacío" }
         email:
-            - NotBlank: ~
+            - NotBlank: { message: "El email no puede estar vacío" }
             - Email:
                 message: El email no es válido.
                 checkMX: true
         password:
-            - NotBlank: ~
+            - NotBlank: { message: "La contraseña no debe estar vacía" }
             - Length:
                 min: 6
                 minMessage: 'La contraseña debe tener un mínimo de {{ limit }} caracteres'
         telefono:
-            - NotBlank: ~
-
-
+            - NotBlank: { message: "El telefono no debe estar vacío" }

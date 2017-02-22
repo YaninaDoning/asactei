@@ -6,7 +6,7 @@ nuevoUsuario:
     path:     /nuevoUsuario/
     defaults: { _controller: FormulariosBundle:Login:nuevoUsuario }
 
-validarUsuario:
+validaUsuario:
     path:     /validaUsuario/
     defaults: { _controller: FormulariosBundle:Login:validate }
 

@@ -4,20 +4,20 @@ namespace FormulariosBundle\Entity;
 
 class Usuario {
 
-    private $id;
-    private $creado;
-    private $apellido;
-    private $nombre;
-    private $organizacion;
-    private $email;
-    private $password;
-    private $hash;
-    private $habilitado;
-    private $salt;
-    private $telefono;
-    private $ultimo_login;
-    private $tramites;
-    private $roles;
+    public $id;
+    public $creado;
+    public $apellido;
+    public $nombre;
+    public $organizacion;
+    public $email;
+    public $password;
+    public $hash;
+    public $habilitado;
+    public $salt;
+    public $telefono;
+    public $ultimo_login;
+    public $tramites;
+    public $roles;
 
     /**
      * Get id
@@ -322,4 +322,7 @@ class Usuario {
     {
         return $this->tramites;
     }
+
+
+
 }

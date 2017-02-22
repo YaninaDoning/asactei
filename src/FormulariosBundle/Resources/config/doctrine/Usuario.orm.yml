@@ -49,3 +49,6 @@ FormulariosBundle\Entity\Usuario:
     ultimo_login:
       type: datetime
       nullable: true
+    roles:
+      type: integer
+      nullable: true

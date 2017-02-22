@@ -1,10 +1,67 @@
 
+{% extends 'base.html.twig' %}
+
+{% block cuerpo %}
+
+<style>
+	.li {
+	    color: red;
+	}
+</style>
+
+
+<div class="row form">
+    <form action="{{ path('validaUsuario') }}" method="post">
+
+    <br>
+	<font color="red">
 	<ul>	
-	    {% for e in errors %}	
-		<li>{{ e.message }}</li>
-	    {% endfor %}
+		<li>{{ error_unico }}</li>
+		{% for e in errors %}	
+		     <li>{{ e.message }}</li>
+		{% endfor %}
 	</ul>
-    </div>
+</font>
+    <br>
+
+    <h3>Alta Usuario</h3>
+        <div class="row">
+
+            <div class="twocol">
+                <label>Apellido</label> 
+                <input id="apellido" name="apellido" class="input required" type="text" value={{apellido}}> 
+                <label>Mail</label>
+                <input id="email" name="email" class="input required" type="text" value={{email}}> 
+            </div>
+
+            <div class="twocol">
+		<label>Nombre</label> 
+                <input id="nombre" name="nombre" class="input required" type="text" value={{nombre}}>
+                <label>Contraseña</label>
+                <input id="password" name="password" class="input required" type="password" value={{password}}>    
+            </div>
+            
+            <div class="twocol">
+                <label>Organización</label>
+                <input id="organizacion" name="organizacion" class="input required" type="text" value={{organizacion}}>
+		<label>Repita Contraseña</label>
+                <input id="password_verify" name="password_verify" class="input required" type="password" value={{password_verify}}>
+            </div>
+
+            <div class="twocol">
+                <label>Teléfono</label> 
+                <input id="telefono" name="telefono" class="input required" type="text" value={{telefono}}> 
+            </div>
+
+            <div class="row"><br>
+		    <a class='li' href="{{ path('login') }}">Cancelar</a>                  
+                    <button type="submit" >Finalizar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
 
 
 

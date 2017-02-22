@@ -4,20 +4,20 @@ namespace FormulariosBundle\Entity;
 
 class Usuario {
 
-    private $id;
-    private $creado;
-    private $apellido;
-    private $nombre;
-    private $organizacion;
-    private $email;
-    private $password;
-    private $hash;
-    private $habilitado;
-    private $salt;
-    private $telefono;
-    private $ultimo_login;
-    private $tramites;
-    private $roles;
+    public $id;
+    public $creado;
+    public $apellido;
+    public $nombre;
+    public $organizacion;
+    public $email;
+    public $password;
+    public $hash;
+    public $habilitado;
+    public $salt;
+    public $telefono;
+    public $ultimo_login;
+    public $tramites;
+    public $roles;
 
     /**
      * Get id
@@ -323,14 +323,17 @@ class Usuario {
         return $this->tramites;
     }
 
+
+
+
     /**
      * Set roles
      *
-     * @param \FormulariosBundle\Entity\Roles $roles
+     * @param integer $roles
      *
      * @return Usuario
      */
-    public function setRoles(\FormulariosBundle\Entity\Roles $roles = null)
+    public function setRoles($roles)
     {
         $this->roles = $roles;
 
@@ -340,7 +343,7 @@ class Usuario {
     /**
      * Get roles
      *
-     * @return \FormulariosBundle\Entity\Roles
+     * @return integer
      */
     public function getRoles()
     {
