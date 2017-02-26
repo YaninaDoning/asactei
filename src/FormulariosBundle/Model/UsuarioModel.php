@@ -20,6 +20,7 @@ class UsuarioModel
 
 	public function SetUsuario($request)
 	{	
+
 		$usuario = new Usuario();
 		$usuario->setApellido($request->request->get('apellido'));
 		$usuario->setNombre($request->request->get('nombre'));
@@ -27,11 +28,12 @@ class UsuarioModel
 		$usuario->setEmail($request->request->get('email'));
 		$usuario->setPassword($request->request->get('password'));
 		$usuario->setTelefono($request->request->get('telefono'));
-		$usuario->setRoles("3");
 		$usuario->setCreado(new \DateTime('now'));
 		$usuario->setHabilitado(true);
-		$usuario->setHash('asdasd');
-		$usuario->setSalt('asdasd');
+		$usuario->setHash('NULL');
+		$usuario->setSalt('NULL');
+		$usuario->setRoles($usuario->getRoles());
+
 		return $usuario;
 	} 
 	

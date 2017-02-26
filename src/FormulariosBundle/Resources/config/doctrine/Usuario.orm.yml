@@ -50,5 +50,6 @@ FormulariosBundle\Entity\Usuario:
       type: datetime
       nullable: true
     roles:
-      type: integer
+      type: array
       nullable: true
+lifecycleCallbacks: {}

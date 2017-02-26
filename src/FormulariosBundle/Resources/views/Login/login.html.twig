@@ -1,19 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block cuerpo %}
+
+	{% if error %}
+		<br><font color="red"><div>{{ error.message }}</div></front>
+	{% endif %} 
+
 	<div class="row form">
 	    <h3>Ingreso de Usuarios Registrados:</h3>
 
-	    <form action="" method="post">
+	    <form action="{{ path('login_check') }}" method="post">
 		<div class="row">
 		    <div class="fourcol">
 		        <label for="username">Email:</label>
-		        <input class="input" type="text" id="user_email" name="user_email" value="" required="required" />
+		        <input class="input" type="text" id="username" name="_username" value="" required="required" value={{last_username}}/>
 
 		        <label for="password">Contraseña:</label>
-		        <input class="input" type="password" id="user_password" name="user_password" required="required" />                
-		        <div class="row">                    
-		            <button onclick="">Entrar</button>
+		        <input class="input" type="password" id="password" name="_password" required="required" />                
+		        <div class="row"> 
+			     <input type="hidden" name="_target_path" value="/tramite" />                   
+		            <button type="submit">Entrar</button>
 		        </div>
 		    </div>
 		    <div class="row"><br>

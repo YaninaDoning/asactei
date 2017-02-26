@@ -2,7 +2,11 @@
 
 namespace FormulariosBundle\Entity;
 
-class Usuario {
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+class Usuario implements UserInterface{
 
     public $id;
     public $creado;
@@ -227,16 +231,6 @@ class Usuario {
     }
 
     /**
-     * Get salt
-     *
-     * @return string 
-     */
-    public function getSalt()
-    {
-        return $this->salt;
-    }
-
-    /**
      * Set telefono
      *
      * @param string $telefono
@@ -347,6 +341,20 @@ class Usuario {
      */
     public function getRoles()
     {
-        return $this->roles;
+        return array('ROLE_USER');
     }
+     
+    public function getUsername()
+    {
+   	return $this->email;
+    }
+
+    public function getSalt()
+    {
+    	return null;
+    }
+
+    public function eraseCredentials(){
+    }
+
 }

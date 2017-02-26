@@ -8,7 +8,7 @@ class PortadaController extends Controller
 {
     public function portadaAction()
     {        
-	return $this->render('FormulariosBundle:Proyectos:portada_proyectos.html.twig', array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva'));
+	  return $this->render('FormulariosBundle:Proyectos:portada_proyectos.html.twig',array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva'));
     }
 
 }

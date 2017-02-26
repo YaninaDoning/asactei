@@ -4,15 +4,35 @@ namespace FormulariosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\SecurityContext;
 use FormulariosBundle\Entity\Usuario;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template; 
+use FormulariosBundle\Event\LogEvent;
+
 
 class LoginController extends Controller
-{
+{	
+    #Login
     public function loginAction()
-    {        
-	return $this->render('FormulariosBundle:Login:login.html.twig', array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva'));
+    {       
+
+ 	$request = $this->getRequest();
+        $session = $request->getSession();
+
+        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(
+                SecurityContext::AUTHENTICATION_ERROR
+            );
+        } else {
+            $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContext::AUTHENTICATION_ERROR);
+        }
+
+        return $this->render('FormulariosBundle:Login:login.html.twig',array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva','last_username' => $session->get(SecurityContext::LAST_USERNAME), 'error'=> $error,));
+ 
     }
 
+    #Nuevo Usuario
     public function nuevoUsuarioAction()
     {    
 	return $this->render('FormulariosBundle:Login:nuevoUsuario.html.twig', array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva',));
@@ -42,7 +62,7 @@ class LoginController extends Controller
 	else {
 		return $this->AgregarUsuarioAction($usuario);
 	} 
-
+		
 	return $this->render('FormulariosBundle:Login:validarUsuario.html.twig', 
 			array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva',
 			'error_unico' => $error_unico,
@@ -68,4 +88,9 @@ class LoginController extends Controller
 	return $this->loginAction();
     }
 	
+    #Administrador
+    public function adminAction()
+    {
+        return new Response('<html><body>Pagina para administrador</body></html>');
+    }
 }

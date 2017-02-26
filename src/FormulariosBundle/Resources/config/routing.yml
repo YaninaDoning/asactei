@@ -1,6 +1,13 @@
 login:
-    path:     /
+    path:     /login
     defaults: { _controller: FormulariosBundle:Login:login }
+
+login_check:
+    path:     /login_check
+
+admin:
+    path:     /admin/
+    defaults: { _controller: FormulariosBundle:Login:admin }
 
 nuevoUsuario:
     path:     /nuevoUsuario/
