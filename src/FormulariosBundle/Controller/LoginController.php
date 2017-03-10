@@ -27,8 +27,8 @@ class LoginController extends Controller
             $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
             $session->remove(SecurityContext::AUTHENTICATION_ERROR);
         }
-
-        return $this->render('FormulariosBundle:Login:login.html.twig',array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva','last_username' => $session->get(SecurityContext::LAST_USERNAME), 'error'=> $error,));
+	
+        return $this->render('FormulariosBundle:Login:login.html.twig',array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva','last_username' => $session->get(SecurityContext::LAST_USERNAME), 'error'=> $error));
  
     }
 
@@ -80,8 +80,11 @@ class LoginController extends Controller
 
     public function AgregarUsuarioAction($usuario)
     {
-
+		
 	$em = $this->getDoctrine()->getManager();
+	$password = $this->get('security.password_encoder')->encodePassword($usuario, $usuario->getPassword());
+    	$usuario->setPassword($password);
+
 	$em->persist($usuario);
 	$em->flush();
 
@@ -91,6 +94,9 @@ class LoginController extends Controller
     #Administrador
     public function adminAction()
     {
-        return new Response('<html><body>Pagina para administrador</body></html>');
+	$repository = $this->getDoctrine()->getRepository('FormulariosBundle:Usuario');
+	$usuario = $repository->findAll();
+
+        return $this->render('FormulariosBundle:Administrador:administrador.html.twig',array('TITULO' => 'Ministerio de Ciencia, Tecnología e Innovación Productiva','usuario'=> $usuario));
     }
 }

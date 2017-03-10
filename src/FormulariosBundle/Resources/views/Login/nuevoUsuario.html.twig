@@ -13,38 +13,38 @@
 <div class="row form">
     <form action="{{ path('validaUsuario') }}" method="post">
 
-    <h3>Alta Usuario</h3>
+    <h3>{% trans %}Alta Usuario{% endtrans %}</h3>
         <div class="row">
 
             <div class="twocol">
-                <label>Apellido</label> 
+                <label>{% trans %}Apellido{% endtrans %}</label> 
                 <input id="apellido" name="apellido" class="input required" type="text"> 
-                <label>Mail</label>
+                <label>{% trans %}Email{% endtrans %}</label>
                 <input id="email" name="email" class="input required" type="text"> 
             </div>
 
             <div class="twocol">
-		<label>Nombre</label> 
+		<label>{% trans %}Nombre{% endtrans %}</label> 
                 <input id="nombre" name="nombre" class="input required" type="text">
-                <label>Contraseña</label>
+                <label>{% trans %}Contraseña{% endtrans %}</label>
                 <input id="password" name="password" class="input required" type="password">    
             </div>
             
             <div class="twocol">
-                <label>Organización</label>
+                <label>{% trans %}Organización{% endtrans %}</label>
                 <input id="organizacion" name="organizacion" class="input required" type="text">
-		<label>Repita Contraseña</label>
+		<label>{% trans %}Repita Contraseña{% endtrans %}</label>
                 <input id="password_verify" name="password_verify" class="input required" type="password">
             </div>
 
             <div class="twocol">
-                <label>Teléfono</label> 
+                <label>{% trans %}Teléfono{% endtrans %}</label> 
                 <input id="telefono" name="telefono" class="input required" type="text"> 
             </div>
 
             <div class="row"><br>
-		    <a class='li' href="{{ path('login') }}">Cancelar</a>                   
-                    <button type="submit" >Finalizar</button>
+		    <a class='li' href="{{ path('login') }}">{% trans %}Cancelar{% endtrans %}</a>                   
+                    <button type="submit" >{% trans %}Finalizar{% endtrans %}</button>
             </div>
         </div>
     </form>

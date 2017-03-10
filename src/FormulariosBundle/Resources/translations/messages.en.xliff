@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file source-language="es" datatype="plaintext" original="file.ext">
+<body>
+	<trans-unit id="1">
+		<source>Apellido</source>
+		<target>Surname</target>
+	</trans-unit>
+	<trans-unit id="2">
+		<source>Email</source>
+		<target>Email</target>
+	</trans-unit>
+	<trans-unit id="3">
+		<source>Nombre</source>
+		<target>Name</target>
+	</trans-unit>
+	<trans-unit id="4">
+		<source>Contraseña</source>
+		<target>Password</target>
+	</trans-unit>
+	<trans-unit id="5">
+		<source>Organización</source>
+		<target>Organization</target>
+	</trans-unit>
+	<trans-unit id="6">
+		<source>Repita Contraseña</source>
+		<target>Repeat Password</target>
+	</trans-unit>
+	<trans-unit id="7">
+		<source>Teléfono</source>
+		<target>Phone</target>
+	</trans-unit>
+	<trans-unit id="8">
+		<source>Cancelar</source>
+		<target>Cancel</target>
+	</trans-unit>
+	<trans-unit id="9">
+		<source>Finalizar</source>
+		<target>Finish</target>
+	</trans-unit>
+	<trans-unit id="10">
+		<source>Ingreso de Usuarios Registrados:</source>
+		<target>Registered User Login:</target>
+	</trans-unit>
+	<trans-unit id="11">
+		<source>Alta Usuario</source>
+		<target>High user:</target>
+	</trans-unit>
+	<trans-unit id="12">
+		<source>Si Ud. no posee Usuario, regístrese en el siguiente</source>
+		<target>If you do not have a User, register on the following</target>
+	</trans-unit>
+	<trans-unit id="13">
+		<source>En caso de haber olvidado su contraseña siga el siguiente</source>
+		<target>If you have forgotten your password, please follow the following</target>
+	</trans-unit>
+	<trans-unit id="14">
+		<source>Enlace</source>
+		<target>Link</target>
+	</trans-unit>
+	<trans-unit id="15">
+		<source>Ayuda:</source>
+		<target>Help:</target>
+	</trans-unit>
+	<trans-unit id="16">
+		<source>Entrar</source>
+		<target>To enter</target>
+	</trans-unit>
+
+</body>
+</file>
+</xliff>

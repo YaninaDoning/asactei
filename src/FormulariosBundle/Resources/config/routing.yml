@@ -1,6 +1,8 @@
 login:
-    path:     /login
+    path:     /{_locale}/login
     defaults: { _controller: FormulariosBundle:Login:login }
+    requirements:
+        _locale: en|es
 
 login_check:
     path:     /login_check
@@ -10,8 +12,10 @@ admin:
     defaults: { _controller: FormulariosBundle:Login:admin }
 
 nuevoUsuario:
-    path:     /nuevoUsuario/
+    path:     /{_locale}/nuevoUsuario/
     defaults: { _controller: FormulariosBundle:Login:nuevoUsuario }
+    requirements:
+        _locale: en|es
 
 validaUsuario:
     path:     /validaUsuario/
@@ -24,6 +28,5 @@ portada:
 ANR_Eventos:
     path:     /ANR_Eventos/
     defaults: { _controller: FormulariosBundle:Formularios:ANR_Eventos }
-
 
 

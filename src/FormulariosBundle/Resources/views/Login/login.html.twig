@@ -7,19 +7,19 @@
 	{% endif %} 
 
 	<div class="row form">
-	    <h3>Ingreso de Usuarios Registrados:</h3>
+	    <h3>{% trans %}Ingreso de Usuarios Registrados:{% endtrans %}</h3>
 
 	    <form action="{{ path('login_check') }}" method="post">
 		<div class="row">
 		    <div class="fourcol">
-		        <label for="username">Email:</label>
+		        <label for="username">{% trans %}Email {% endtrans %}</label>
 		        <input class="input" type="text" id="username" name="_username" value="" required="required" value={{last_username}}/>
 
-		        <label for="password">Contraseña:</label>
+		        <label for="password">{% trans %} Contraseña {% endtrans %}</label>
 		        <input class="input" type="password" id="password" name="_password" required="required" />                
 		        <div class="row"> 
-			     <input type="hidden" name="_target_path" value="/tramite" />                   
-		            <button type="submit">Entrar</button>
+			    <input type="hidden" name="_target_path" value="/tramite" />
+		            <button type="submit">{% trans %}Entrar{% endtrans %}</button>
 		        </div>
 		    </div>
 		    <div class="row"><br>
@@ -28,12 +28,12 @@
 		                 style="margin: 5px; padding: 10px;">
 		                <p>
 		                    <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span> 
-		                    <strong>Ayuda:</strong>
-		                    Si Ud. no posee Usuario, regístrese en el siguiente   
-		                    <a href="{{ path('nuevoUsuario') }}" style="color:red!important"> Enlace </a> <br/>
+		                    <strong>{% trans %}Ayuda:{% endtrans %}</strong>
+		                    {% trans %}Si Ud. no posee Usuario, regístrese en el siguiente{% endtrans %}   
+		                    <a href="{{ path('nuevoUsuario') }}" style="color:red!important"> {% trans %}Enlace{% endtrans %} </a> <br/>
 		                    <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span> 
-		                    <strong>Ayuda:</strong>
-		                    En caso de haber olvidado su contraseña siga el siguiente <a href="" style="color:red!important"> Enlace </a>.
+		                    <strong>{% trans %}Ayuda:{% endtrans %}</strong>
+		                    {% trans %}En caso de haber olvidado su contraseña siga el siguiente{% endtrans %} <a href="" style="color:red!important"> {% trans %}Enlace {% endtrans %}</a>.
 		                </p>
 		            </div>
 		        </div>

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block cuerpo %}
+
+<style type="text/css">
+     form button {		
+          font-size: 12px;
+          margin: 4px 0;
+justify-content: center;
+          background: none repeat scroll 0 0 #cccccc !important;
+          border: medium none;
+          color: #555555;
+          font-weight: normal;
+      }
+</style>
+
+<div class="row form">
+     <h3>Usuarios </h3>
+        <form>
+            <div class="row">
+                <div class="twelvecol table-responsive">
+                    <table
+                        class="table table-condensed table-hover table-striped table-bordered"
+                        border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th class="columns-dest">Usuario</th>
+				<th class="columns-dest" style="width:15px">Rol</th>
+				<th class="columns-dest" style="width:150px">Habilitado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+			{% for u in usuario %}
+			    <tr>
+				<td>{{u.nombre}}</td>
+				<td>{{u.roles}}</td>
+				<td>{{u.habilitado}}</td>
+			    </tr>
+			{% else %}
+			    <tr>
+				<td>No hay resultados.</td>
+			    </tr>
+			{% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+                   
+ {% endblock %}
